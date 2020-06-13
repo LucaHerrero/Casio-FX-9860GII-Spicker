@@ -1,0 +1,1061 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Luca\Desktop\Abschlussprüfung\15062020.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      15062020.c     1    #include "fxlib.h"
+      15062020.c     2    #include "stdio.h"
+      15062020.c     3    
+      15062020.c     4    #define TRUE 1
+      15062020.c     5    #define FALSE 0
+      15062020.c     6    
+      15062020.c     7    int drmCheck = 0;
+      15062020.c     8    
+      15062020.c     9    int AddIn_main(int isAppli, unsigned short OptionNum)
+P   00000000              _AddIn_main:                     ; function: AddIn_main
+                                                           ; frame size=4
+    00000000 4F22                   STS.L       PR,@-R15
+      15062020.c    10    {
+      15062020.c    11        Bdisp_AllClr_DDVRAM();
+    00000002 D307                   MOV.L       L484+2,R3  ; _Bdisp_AllClr_DDVRAM
+    00000004 430B                   JSR         @R3
+    00000006 0009                   NOP
+      15062020.c    12        drm();
+    00000008 B0BA                   BSR         _drm
+    0000000A 0009                   NOP
+      15062020.c    13        if (drmCheck == 1){
+    0000000C D305                   MOV.L       L484+6,R3  ; _drmCheck
+    0000000E 6032                   MOV.L       @R3,R0
+    00000010 8801                   CMP/EQ      #1,R0
+    00000012 8B01                   BF          L447
+      15062020.c    14            firstMenu();
+    00000014 B008                   BSR         _firstMenu
+    00000016 0009                   NOP
+    00000018              L447:                             
+      15062020.c    15        }
+      15062020.c    16        return 1;
+      15062020.c    17    }
+    00000018 4F26                   LDS.L       @R15+,PR
+    0000001A 000B                   RTS
+    0000001C E001                   MOV         #1,R0
+    0000001E              L484:                             
+    0000001E 0000                   .DATA.W     0
+    00000020 <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+    00000024 <00000000>             .DATA.L     _drmCheck
+      15062020.c    18    int firstMenu() {
+    00000028              _firstMenu:                      ; function: firstMenu
+                                                           ; frame size=28
+                                                           ; used runtime library name:
+                                                           ; __quick_evn_mvn
+      15062020.c    19        unsigned int i;
+      15062020.c    20        unsigned int auswahl = 3;
+      15062020.c    21        unsigned int menuItemsX = 3;
+      15062020.c    22        unsigned int menuItemsY = 3;
+      15062020.c    23        unsigned int menuItemsNbr = 6;
+      15062020.c    24        unsigned char * menuItems[] = {
+      15062020.c    25            "Test1",
+      15062020.c    26            "Test2",
+      15062020.c    27            "Test3",
+      15062020.c    28            "Test4",
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      15062020.c    29            "Test5",
+      15062020.c    30            "Test6"
+      15062020.c    31        };
+    00000028 D244                   MOV.L       L485+8,R2  ; L352
+    0000002A 7FE4                   ADD         #-28,R15
+    0000002C D344                   MOV.L       L485+12,R3 ; __quick_evn_mvn
+    0000002E EE03                   MOV         #3,R14
+    00000030 E906                   MOV         #6,R9
+    00000032 61F3                   MOV         R15,R1
+    00000034 7104                   ADD         #4,R1
+    00000036 430B                   JSR         @R3
+    00000038 E018                   MOV         #24,R0
+      15062020.c    32        // TITLE 
+      15062020.c    33        locate(1,1);
+    0000003A E501                   MOV         #1,R5
+    0000003C DD41                   MOV.L       L485+16,R13; _locate
+    0000003E 4D0B                   JSR         @R13
+    00000040 6453                   MOV         R5,R4
+      15062020.c    34        Print((unsigned char*)"Spicker :D");  
+    00000042 DC41                   MOV.L       L485+20,R12; _Print
+    00000044 D441                   MOV.L       L485+24,R4 ; L359
+    00000046 4C0B                   JSR         @R12
+    00000048 0009                   NOP
+      15062020.c    35        // Menu Items
+      15062020.c    36        for(i=0; i < menuItemsNbr; i=i+1){
+    0000004A EB00                   MOV         #0,R11
+    0000004C 6AF3                   MOV         R15,R10
+    0000004E 7A04                   ADD         #4,R10
+    00000050 E803                   MOV         #3,R8
+    00000052              L450:                             
+      15062020.c    37            locate(menuItemsX, menuItemsY+i);
+    00000052 6583                   MOV         R8,R5
+    00000054 4D0B                   JSR         @R13
+    00000056 E403                   MOV         #3,R4
+      15062020.c    38            Print(menuItems[i]);
+    00000058 4C0B                   JSR         @R12
+    0000005A 64A6                   MOV.L       @R10+,R4
+    0000005C 7B01                   ADD         #1,R11
+    0000005E 3B92                   CMP/HS      R9,R11
+    00000060 8FF7                   BF/S        L450
+    00000062 7801                   ADD         #1,R8
+    00000064 9866                   MOV.W       L485,R8    ; H'7542
+    00000066 6983                   MOV         R8,R9
+    00000068 9A65                   MOV.W       L485+2,R10 ; H'7534
+    0000006A 7905                   ADD         #5,R9
+    0000006C DB38                   MOV.L       L485+28,R11; L366
+      15062020.c    39        };
+      15062020.c    40       
+      15062020.c    41        // Cursor    
+      15062020.c    42        while (1){
+    0000006E              L452:                             
+      15062020.c    43            unsigned int key;
+      15062020.c    44            locate(1,auswahl);
+    0000006E 65E3                   MOV         R14,R5
+    00000070 4D0B                   JSR         @R13
+    00000072 E401                   MOV         #1,R4
+      15062020.c    45            Print((unsigned char*)">");       
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000074 D437                   MOV.L       L485+32,R4 ; L363
+    00000076 4C0B                   JSR         @R12
+    00000078 0009                   NOP
+      15062020.c    46            GetKey(&key);
+    0000007A D237                   MOV.L       L485+36,R2 ; _GetKey
+    0000007C 420B                   JSR         @R2
+    0000007E 64F3                   MOV         R15,R4
+      15062020.c    47            if(KEY_CTRL_UP == key) {
+    00000080 63F2                   MOV.L       @R15,R3
+    00000082 3380                   CMP/EQ      R8,R3
+    00000084 8B0E                   BF          L453
+      15062020.c    48                if (auswahl == 3) {
+    00000086 60E3                   MOV         R14,R0
+    00000088 8803                   CMP/EQ      #3,R0
+    0000008A 8B05                   BF          L454
+      15062020.c    49                    locate(1,auswahl);
+    0000008C 65E3                   MOV         R14,R5
+    0000008E 4D0B                   JSR         @R13
+    00000090 E401                   MOV         #1,R4
+      15062020.c    50                    Print((unsigned char*)" ");
+    00000092 4C0B                   JSR         @R12
+    00000094 64B3                   MOV         R11,R4
+      15062020.c    51                    auswahl = auswahl + 6;
+    00000096 7E06                   ADD         #6,R14
+    00000098              L454:                             
+      15062020.c    52                }
+      15062020.c    53                locate(1,auswahl);
+    00000098 65E3                   MOV         R14,R5
+    0000009A 4D0B                   JSR         @R13
+    0000009C E401                   MOV         #1,R4
+      15062020.c    54                Print((unsigned char*)" ");
+    0000009E 4C0B                   JSR         @R12
+    000000A0 64B3                   MOV         R11,R4
+      15062020.c    55                auswahl = auswahl - 1;
+    000000A2 7EFF                   ADD         #-1,R14
+    000000A4              L453:                             
+      15062020.c    56            };
+      15062020.c    57            if(KEY_CTRL_DOWN == key) {
+    000000A4 62F2                   MOV.L       @R15,R2
+    000000A6 3290                   CMP/EQ      R9,R2
+    000000A8 8B0E                   BF          L455
+      15062020.c    58                if (auswahl == 8) {
+    000000AA 60E3                   MOV         R14,R0
+    000000AC 8808                   CMP/EQ      #8,R0
+    000000AE 8B05                   BF          L456
+      15062020.c    59                    locate(1,auswahl);
+    000000B0 65E3                   MOV         R14,R5
+    000000B2 4D0B                   JSR         @R13
+    000000B4 E401                   MOV         #1,R4
+      15062020.c    60                    Print((unsigned char*)" ");
+    000000B6 4C0B                   JSR         @R12
+    000000B8 64B3                   MOV         R11,R4
+      15062020.c    61                    auswahl = auswahl - 6;
+    000000BA 7EFA                   ADD         #-6,R14
+    000000BC              L456:                             
+      15062020.c    62                }
+      15062020.c    63                locate(1,auswahl);
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000BC 65E3                   MOV         R14,R5
+    000000BE 4D0B                   JSR         @R13
+    000000C0 E401                   MOV         #1,R4
+      15062020.c    64                Print((unsigned char*)" ");
+    000000C2 4C0B                   JSR         @R12
+    000000C4 64B3                   MOV         R11,R4
+      15062020.c    65                auswahl = auswahl + 1;
+    000000C6 7E01                   ADD         #1,R14
+    000000C8              L455:                             
+      15062020.c    66            };
+      15062020.c    67            if (KEY_CTRL_EXE == key) {
+    000000C8 63F2                   MOV.L       @R15,R3
+    000000CA 33A0                   CMP/EQ      R10,R3
+    000000CC 8B2C                   BF          L457
+      15062020.c    68                if (auswahl == 3) {
+    000000CE 60E3                   MOV         R14,R0
+    000000D0 8803                   CMP/EQ      #3,R0
+    000000D2 8B05                   BF          L458
+      15062020.c    69                    locate(8,1);
+    000000D4 E501                   MOV         #1,R5
+    000000D6 4D0B                   JSR         @R13
+    000000D8 E408                   MOV         #8,R4
+      15062020.c    70                    Print((unsigned char*)"TEST1");
+    000000DA D420                   MOV.L       L485+40,R4 ; L371
+    000000DC 4C0B                   JSR         @R12
+    000000DE 0009                   NOP
+    000000E0              L458:                             
+      15062020.c    71                }
+      15062020.c    72                if (auswahl == 4) {
+    000000E0 60E3                   MOV         R14,R0
+    000000E2 8804                   CMP/EQ      #4,R0
+    000000E4 8B05                   BF          L459
+      15062020.c    73                    locate(8,1);
+    000000E6 E501                   MOV         #1,R5
+    000000E8 4D0B                   JSR         @R13
+    000000EA E408                   MOV         #8,R4
+      15062020.c    74                    Print((unsigned char*)"TEST2");
+    000000EC D41C                   MOV.L       L485+44,R4 ; L373
+    000000EE 4C0B                   JSR         @R12
+    000000F0 0009                   NOP
+    000000F2              L459:                             
+      15062020.c    75                }
+      15062020.c    76                if (auswahl == 5) {
+    000000F2 60E3                   MOV         R14,R0
+    000000F4 8805                   CMP/EQ      #5,R0
+    000000F6 8B05                   BF          L460
+      15062020.c    77                    locate(8,1);
+    000000F8 E501                   MOV         #1,R5
+    000000FA 4D0B                   JSR         @R13
+    000000FC E408                   MOV         #8,R4
+      15062020.c    78                    Print((unsigned char*)"TEST3");
+    000000FE D419                   MOV.L       L485+48,R4 ; L375
+    00000100 4C0B                   JSR         @R12
+    00000102 0009                   NOP
+    00000104              L460:                             
+      15062020.c    79                }
+      15062020.c    80                if (auswahl == 6) {
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000104 60E3                   MOV         R14,R0
+    00000106 8806                   CMP/EQ      #6,R0
+    00000108 8B05                   BF          L461
+      15062020.c    81                    locate(8,1);
+    0000010A E501                   MOV         #1,R5
+    0000010C 4D0B                   JSR         @R13
+    0000010E E408                   MOV         #8,R4
+      15062020.c    82                    Print((unsigned char*)"TEST4");
+    00000110 D415                   MOV.L       L485+52,R4 ; L377
+    00000112 4C0B                   JSR         @R12
+    00000114 0009                   NOP
+    00000116              L461:                             
+      15062020.c    83                }
+      15062020.c    84                if (auswahl == 7) {
+    00000116 60E3                   MOV         R14,R0
+    00000118 8807                   CMP/EQ      #7,R0
+    0000011A 8B05                   BF          L457
+      15062020.c    85                    locate(8,1);
+    0000011C E501                   MOV         #1,R5
+    0000011E 4D0B                   JSR         @R13
+    00000120 E408                   MOV         #8,R4
+      15062020.c    86                    Print((unsigned char*)"TEST5");
+    00000122 D412                   MOV.L       L485+56,R4 ; L379
+    00000124 4C0B                   JSR         @R12
+    00000126 0009                   NOP
+    00000128              L457:                             
+      15062020.c    87                }
+      15062020.c    88            };
+      15062020.c    89            if (KEY_CTRL_EXIT == key) {
+    00000128 9206                   MOV.W       L485+4,R2  ; H'7532
+    0000012A 63F2                   MOV.L       @R15,R3
+    0000012C 3320                   CMP/EQ      R2,R3
+    0000012E 8B9E                   BF          L452
+      15062020.c    90                Bdisp_AllClr_DDVRAM();
+    00000130 A01E                   BRA         L482
+    00000132 0009                   NOP
+    00000134              L485:                             
+    00000134 7542                   .DATA.W     H'7542
+    00000136 7534                   .DATA.W     H'7534
+    00000138 7532                   .DATA.W     H'7532
+    0000013A 0000                   .DATA.W     0
+    0000013C <00000000>             .DATA.L     L352
+    00000140 <00000000>             .DATA.L     __quick_evn_mvn
+    00000144 <00000000>             .DATA.L     _locate
+    00000148 <00000000>             .DATA.L     _Print
+    0000014C <00000000>             .DATA.L     L359
+    00000150 <00000000>             .DATA.L     L366
+    00000154 <00000000>             .DATA.L     L363
+    00000158 <00000000>             .DATA.L     _GetKey
+    0000015C <00000000>             .DATA.L     L371
+    00000160 <00000000>             .DATA.L     L373
+    00000164 <00000000>             .DATA.L     L375
+    00000168 <00000000>             .DATA.L     L377
+    0000016C <00000000>             .DATA.L     L379
+    00000170              L482:                             
+    00000170 D302                   MOV.L       L486+2,R3  ; _Bdisp_AllClr_DDVRAM
+    00000172 430B                   JSR         @R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000174 0009                   NOP
+    00000176 AF7A                   BRA         L452
+    00000178 0009                   NOP
+    0000017A              L486:                             
+    0000017A 0000                   .DATA.W     0
+    0000017C <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+      15062020.c    91            }
+      15062020.c    92       }
+      15062020.c    93    }
+      15062020.c    94    
+      15062020.c    95    // DRM System
+      15062020.c    96    int drm() {
+    00000180              _drm:                            ; function: drm
+                                                           ; frame size=64
+    00000180 2FE6                   MOV.L       R14,@-R15
+      15062020.c    97        unsigned int key;
+      15062020.c    98        int selectedNumber = 0;
+      15062020.c    99        int corsur = 7;
+      15062020.c   100        int eingaben[4];
+      15062020.c   101        locate(10,2);
+    00000182 E502                   MOV         #2,R5
+    00000184 2FD6                   MOV.L       R13,@-R15
+    00000186 EE00                   MOV         #0,R14
+    00000188 2FC6                   MOV.L       R12,@-R15
+    0000018A 2FB6                   MOV.L       R11,@-R15
+    0000018C 2FA6                   MOV.L       R10,@-R15
+    0000018E 2F96                   MOV.L       R9,@-R15
+    00000190 2F86                   MOV.L       R8,@-R15
+    00000192 E807                   MOV         #7,R8
+    00000194 DC67                   MOV.L       L487,R12   ; _locate
+    00000196 6D83                   MOV         R8,R13
+    00000198 4F22                   STS.L       PR,@-R15
+    0000019A 7FE0                   ADD         #-32,R15
+    0000019C 4C0B                   JSR         @R12
+    0000019E E40A                   MOV         #10,R4
+      15062020.c   102        Print((unsigned char*)"DRM");
+    000001A0 DB65                   MOV.L       L487+4,R11 ; _Print
+    000001A2 D466                   MOV.L       L487+8,R4  ; L386
+    000001A4 4B0B                   JSR         @R11
+    000001A6 0009                   NOP
+      15062020.c   103        locate(5,3);
+    000001A8 E503                   MOV         #3,R5
+    000001AA 4C0B                   JSR         @R12
+    000001AC E405                   MOV         #5,R4
+      15062020.c   104        Print((unsigned char*)"Code eingeben");
+    000001AE D464                   MOV.L       L487+12,R4 ; L387
+    000001B0 4B0B                   JSR         @R11
+    000001B2 0009                   NOP
+      15062020.c   105        locate(6,5);
+    000001B4 E505                   MOV         #5,R5
+    000001B6 4C0B                   JSR         @R12
+    000001B8 E406                   MOV         #6,R4
+      15062020.c   106        Print((unsigned char*)"[ ] [ ] [ ]");
+    000001BA D462                   MOV.L       L487+16,R4 ; L388
+    000001BC 4B0B                   JSR         @R11
+    000001BE 0009                   NOP
+    000001C0 6AF3                   MOV         R15,R10
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    7
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001C2 7A10                   ADD         #16,R10
+    000001C4 63A3                   MOV         R10,R3
+    000001C6 6233                   MOV         R3,R2
+    000001C8 1F33                   MOV.L       R3,@(12,R15)
+    000001CA E901                   MOV         #1,R9
+    000001CC 7204                   ADD         #4,R2
+    000001CE 6133                   MOV         R3,R1
+    000001D0 1F21                   MOV.L       R2,@(4,R15)
+    000001D2 7108                   ADD         #8,R1
+    000001D4 1F12                   MOV.L       R1,@(8,R15)
+      15062020.c   107        while (1)
+    000001D6              L465:                             
+      15062020.c   108        {
+      15062020.c   109            GetKey(&key);
+    000001D6 D25C                   MOV.L       L487+20,R2 ; _GetKey
+    000001D8 420B                   JSR         @R2
+    000001DA 64F3                   MOV         R15,R4
+      15062020.c   110            if (KEY_CHAR_0 == key){
+    000001DC 60F2                   MOV.L       @R15,R0
+    000001DE 8830                   CMP/EQ      #48,R0
+    000001E0 8B0B                   BF          L466
+      15062020.c   111                eingaben[selectedNumber] = 0;
+    000001E2 60E3                   MOV         R14,R0
+    000001E4 4008                   SHLL2       R0
+    000001E6 E300                   MOV         #0,R3
+    000001E8 0A36                   MOV.L       R3,@(R0,R10)
+      15062020.c   112                locate(corsur, 5);
+    000001EA E505                   MOV         #5,R5
+    000001EC 4C0B                   JSR         @R12
+    000001EE 64D3                   MOV         R13,R4
+      15062020.c   113                Print((unsigned char*)"0");
+    000001F0 D456                   MOV.L       L487+24,R4 ; L391
+    000001F2 4B0B                   JSR         @R11
+    000001F4 0009                   NOP
+      15062020.c   114                selectedNumber = selectedNumber + 1;
+    000001F6 7E01                   ADD         #1,R14
+      15062020.c   115                corsur = corsur + 4;
+    000001F8 7D04                   ADD         #4,R13
+    000001FA              L466:                             
+      15062020.c   116            }
+      15062020.c   117            if (KEY_CHAR_1 == key){
+    000001FA 60F2                   MOV.L       @R15,R0
+    000001FC 8831                   CMP/EQ      #49,R0
+    000001FE 8B0A                   BF          L467
+      15062020.c   118                eingaben[selectedNumber] = 1;
+    00000200 60E3                   MOV         R14,R0
+    00000202 4008                   SHLL2       R0
+    00000204 0A96                   MOV.L       R9,@(R0,R10)
+      15062020.c   119                locate(corsur, 5);
+    00000206 E505                   MOV         #5,R5
+    00000208 4C0B                   JSR         @R12
+    0000020A 64D3                   MOV         R13,R4
+      15062020.c   120                Print((unsigned char*)"1");
+    0000020C D450                   MOV.L       L487+28,R4 ; L393
+    0000020E 4B0B                   JSR         @R11
+    00000210 0009                   NOP
+      15062020.c   121                selectedNumber = selectedNumber + 1;
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    8
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000212 7E01                   ADD         #1,R14
+      15062020.c   122                corsur = corsur + 4;
+    00000214 7D04                   ADD         #4,R13
+    00000216              L467:                             
+      15062020.c   123            }
+      15062020.c   124            if (KEY_CHAR_2 == key){
+    00000216 60F2                   MOV.L       @R15,R0
+    00000218 8832                   CMP/EQ      #50,R0
+    0000021A 8B0B                   BF          L468
+      15062020.c   125                eingaben[selectedNumber] = 2;
+    0000021C 60E3                   MOV         R14,R0
+    0000021E 4008                   SHLL2       R0
+    00000220 E302                   MOV         #2,R3
+      15062020.c   126                locate(corsur, 5);
+    00000222 E505                   MOV         #5,R5
+    00000224 0A36                   MOV.L       R3,@(R0,R10)
+    00000226 4C0B                   JSR         @R12
+    00000228 64D3                   MOV         R13,R4
+      15062020.c   127                Print((unsigned char*)"2");
+    0000022A D44A                   MOV.L       L487+32,R4 ; L395
+    0000022C 4B0B                   JSR         @R11
+    0000022E 0009                   NOP
+      15062020.c   128                selectedNumber = selectedNumber + 1;
+    00000230 7E01                   ADD         #1,R14
+      15062020.c   129                corsur = corsur + 4;
+    00000232 7D04                   ADD         #4,R13
+    00000234              L468:                             
+      15062020.c   130            }
+      15062020.c   131            if (KEY_CHAR_3 == key){
+    00000234 60F2                   MOV.L       @R15,R0
+    00000236 8833                   CMP/EQ      #51,R0
+    00000238 8B0B                   BF          L469
+      15062020.c   132                eingaben[selectedNumber] = 3;
+    0000023A 60E3                   MOV         R14,R0
+    0000023C 4008                   SHLL2       R0
+    0000023E E303                   MOV         #3,R3
+    00000240 0A36                   MOV.L       R3,@(R0,R10)
+      15062020.c   133                locate(corsur, 5);
+    00000242 E505                   MOV         #5,R5
+    00000244 4C0B                   JSR         @R12
+    00000246 64D3                   MOV         R13,R4
+      15062020.c   134                Print((unsigned char*)"3");
+    00000248 D443                   MOV.L       L487+36,R4 ; L397
+    0000024A 4B0B                   JSR         @R11
+    0000024C 0009                   NOP
+      15062020.c   135                selectedNumber = selectedNumber + 1;
+    0000024E 7E01                   ADD         #1,R14
+      15062020.c   136                corsur = corsur + 4;
+    00000250 7D04                   ADD         #4,R13
+    00000252              L469:                             
+      15062020.c   137            }
+      15062020.c   138            if (KEY_CHAR_4 == key){
+    00000252 60F2                   MOV.L       @R15,R0
+    00000254 8834                   CMP/EQ      #52,R0
+    00000256 8B0B                   BF          L470
+      15062020.c   139                eingaben[selectedNumber] = 4;
+    00000258 60E3                   MOV         R14,R0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000025A 4008                   SHLL2       R0
+    0000025C E304                   MOV         #4,R3
+      15062020.c   140                locate(corsur, 5);
+    0000025E E505                   MOV         #5,R5
+    00000260 0A36                   MOV.L       R3,@(R0,R10)
+    00000262 4C0B                   JSR         @R12
+    00000264 64D3                   MOV         R13,R4
+      15062020.c   141                Print((unsigned char*)"4");
+    00000266 D43D                   MOV.L       L487+40,R4 ; L399
+    00000268 4B0B                   JSR         @R11
+    0000026A 0009                   NOP
+      15062020.c   142                selectedNumber = selectedNumber + 1;
+    0000026C 7E01                   ADD         #1,R14
+      15062020.c   143                corsur = corsur + 4;
+    0000026E 7D04                   ADD         #4,R13
+    00000270              L470:                             
+      15062020.c   144            }
+      15062020.c   145            if (KEY_CHAR_5 == key){
+    00000270 60F2                   MOV.L       @R15,R0
+    00000272 8835                   CMP/EQ      #53,R0
+    00000274 8B0B                   BF          L471
+      15062020.c   146                eingaben[selectedNumber] = 5;
+    00000276 60E3                   MOV         R14,R0
+    00000278 4008                   SHLL2       R0
+    0000027A E305                   MOV         #5,R3
+    0000027C 0A36                   MOV.L       R3,@(R0,R10)
+      15062020.c   147                locate(corsur, 5);
+    0000027E 6533                   MOV         R3,R5
+    00000280 4C0B                   JSR         @R12
+    00000282 64D3                   MOV         R13,R4
+      15062020.c   148                Print((unsigned char*)"5");
+    00000284 D436                   MOV.L       L487+44,R4 ; L401
+    00000286 4B0B                   JSR         @R11
+    00000288 0009                   NOP
+      15062020.c   149                selectedNumber = selectedNumber + 1;
+    0000028A 7E01                   ADD         #1,R14
+      15062020.c   150                corsur = corsur + 4;
+    0000028C 7D04                   ADD         #4,R13
+    0000028E              L471:                             
+      15062020.c   151            }
+      15062020.c   152            if (KEY_CHAR_6 == key){
+    0000028E 60F2                   MOV.L       @R15,R0
+    00000290 8836                   CMP/EQ      #54,R0
+    00000292 8B0B                   BF          L472
+      15062020.c   153                eingaben[selectedNumber] = 6;
+    00000294 60E3                   MOV         R14,R0
+    00000296 4008                   SHLL2       R0
+    00000298 E306                   MOV         #6,R3
+      15062020.c   154                locate(corsur, 5);
+    0000029A E505                   MOV         #5,R5
+    0000029C 0A36                   MOV.L       R3,@(R0,R10)
+    0000029E 4C0B                   JSR         @R12
+    000002A0 64D3                   MOV         R13,R4
+      15062020.c   155                Print((unsigned char*)"6");
+    000002A2 D430                   MOV.L       L487+48,R4 ; L403
+    000002A4 4B0B                   JSR         @R11
+    000002A6 0009                   NOP
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   10
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      15062020.c   156                selectedNumber = selectedNumber + 1;
+    000002A8 7E01                   ADD         #1,R14
+      15062020.c   157                corsur = corsur + 4;
+    000002AA 7D04                   ADD         #4,R13
+    000002AC              L472:                             
+      15062020.c   158            }
+      15062020.c   159            if (KEY_CHAR_7 == key){
+    000002AC 60F2                   MOV.L       @R15,R0
+    000002AE 8837                   CMP/EQ      #55,R0
+    000002B0 8B0A                   BF          L473
+      15062020.c   160                eingaben[selectedNumber] = 7;
+    000002B2 60E3                   MOV         R14,R0
+    000002B4 4008                   SHLL2       R0
+      15062020.c   161                locate(corsur, 5);
+    000002B6 E505                   MOV         #5,R5
+    000002B8 0A86                   MOV.L       R8,@(R0,R10)
+    000002BA 4C0B                   JSR         @R12
+    000002BC 64D3                   MOV         R13,R4
+      15062020.c   162                Print((unsigned char*)"7");
+    000002BE D42A                   MOV.L       L487+52,R4 ; L405
+    000002C0 4B0B                   JSR         @R11
+    000002C2 0009                   NOP
+      15062020.c   163                selectedNumber = selectedNumber + 1;
+    000002C4 7E01                   ADD         #1,R14
+      15062020.c   164                corsur = corsur + 4;
+    000002C6 7D04                   ADD         #4,R13
+    000002C8              L473:                             
+      15062020.c   165            }
+      15062020.c   166            if (KEY_CHAR_8 == key){
+    000002C8 60F2                   MOV.L       @R15,R0
+    000002CA 8838                   CMP/EQ      #56,R0
+    000002CC 8B0B                   BF          L474
+      15062020.c   167                eingaben[selectedNumber] = 8;
+    000002CE 60E3                   MOV         R14,R0
+    000002D0 4008                   SHLL2       R0
+    000002D2 E308                   MOV         #8,R3
+    000002D4 0A36                   MOV.L       R3,@(R0,R10)
+      15062020.c   168                locate(corsur, 5);
+    000002D6 E505                   MOV         #5,R5
+    000002D8 4C0B                   JSR         @R12
+    000002DA 64D3                   MOV         R13,R4
+      15062020.c   169                Print((unsigned char*)"8");
+    000002DC D423                   MOV.L       L487+56,R4 ; L407
+    000002DE 4B0B                   JSR         @R11
+    000002E0 0009                   NOP
+      15062020.c   170                selectedNumber = selectedNumber + 1;
+    000002E2 7E01                   ADD         #1,R14
+      15062020.c   171                corsur = corsur + 4;
+    000002E4 7D04                   ADD         #4,R13
+    000002E6              L474:                             
+      15062020.c   172            }
+      15062020.c   173            if (KEY_CHAR_9 == key){
+    000002E6 60F2                   MOV.L       @R15,R0
+    000002E8 8839                   CMP/EQ      #57,R0
+    000002EA 8B0B                   BF          L475
+      15062020.c   174                eingaben[selectedNumber] = 9;
+    000002EC 60E3                   MOV         R14,R0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   11
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000002EE 4008                   SHLL2       R0
+    000002F0 E309                   MOV         #9,R3
+      15062020.c   175                locate(corsur, 5);
+    000002F2 E505                   MOV         #5,R5
+    000002F4 0A36                   MOV.L       R3,@(R0,R10)
+    000002F6 4C0B                   JSR         @R12
+    000002F8 64D3                   MOV         R13,R4
+      15062020.c   176                Print((unsigned char*)"9");
+    000002FA D41D                   MOV.L       L487+60,R4 ; L409
+    000002FC 4B0B                   JSR         @R11
+    000002FE 0009                   NOP
+      15062020.c   177                selectedNumber = selectedNumber + 1;
+    00000300 7E01                   ADD         #1,R14
+      15062020.c   178                corsur = corsur + 4;
+    00000302 7D04                   ADD         #4,R13
+    00000304              L475:                             
+      15062020.c   179            }
+      15062020.c   180            if (selectedNumber == 3){
+    00000304 60E3                   MOV         R14,R0
+    00000306 8803                   CMP/EQ      #3,R0
+    00000308 8901                   BT          L488
+    0000030A AF64                   BRA         L465
+    0000030C 0009                   NOP
+    0000030E              L488:                             
+      15062020.c   181                if (eingaben[0] == 6) {
+    0000030E 50F3                   MOV.L       @(12,R15),R0
+    00000310 6002                   MOV.L       @R0,R0
+    00000312 8806                   CMP/EQ      #6,R0
+    00000314 8B09                   BF          L477
+      15062020.c   182                    if (eingaben[1] == 8) {
+    00000316 50F1                   MOV.L       @(4,R15),R0
+    00000318 6002                   MOV.L       @R0,R0
+    0000031A 8808                   CMP/EQ      #8,R0
+    0000031C 8B05                   BF          L477
+      15062020.c   183                        if (eingaben[2] == 4) {
+    0000031E 50F2                   MOV.L       @(8,R15),R0
+    00000320 6002                   MOV.L       @R0,R0
+    00000322 8804                   CMP/EQ      #4,R0
+    00000324 8B01                   BF          L477
+      15062020.c   184                            drmCheck = 1;
+    00000326 D213                   MOV.L       L487+64,R2 ; _drmCheck
+    00000328 2292                   MOV.L       R9,@R2
+    0000032A              L477:                             
+      15062020.c   185                        }
+      15062020.c   186                    }
+      15062020.c   187                }
+      15062020.c   188                Bdisp_AllClr_DDVRAM();
+    0000032A D313                   MOV.L       L487+68,R3 ; _Bdisp_AllClr_DDVRAM
+    0000032C 430B                   JSR         @R3
+    0000032E 0009                   NOP
+      15062020.c   189                Sleep(300);
+    00000330 A024                   BRA         L483
+    00000332 0009                   NOP
+    00000334              L487:                             
+    00000334 <00000000>             .DATA.L     _locate
+    00000338 <00000000>             .DATA.L     _Print
+    0000033C <00000000>             .DATA.L     L386
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   12
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000340 <00000000>             .DATA.L     L387
+    00000344 <00000000>             .DATA.L     L388
+    00000348 <00000000>             .DATA.L     _GetKey
+    0000034C <00000000>             .DATA.L     L391
+    00000350 <00000000>             .DATA.L     L393
+    00000354 <00000000>             .DATA.L     L395
+    00000358 <00000000>             .DATA.L     L397
+    0000035C <00000000>             .DATA.L     L399
+    00000360 <00000000>             .DATA.L     L401
+    00000364 <00000000>             .DATA.L     L403
+    00000368 <00000000>             .DATA.L     L405
+    0000036C <00000000>             .DATA.L     L407
+    00000370 <00000000>             .DATA.L     L409
+    00000374 <00000000>             .DATA.L     _drmCheck
+    00000378 <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+    0000037C              L483:                             
+    0000037C 940D                   MOV.W       L489,R4    ; H'012C
+    0000037E D207                   MOV.L       L489+2,R2  ; _Sleep
+    00000380 420B                   JSR         @R2
+    00000382 0009                   NOP
+      15062020.c   190                return(0);
+    00000384 E000                   MOV         #0,R0
+      15062020.c   191            }
+      15062020.c   192        }
+      15062020.c   193    }
+    00000386 7F20                   ADD         #32,R15
+    00000388 4F26                   LDS.L       @R15+,PR
+    0000038A 68F6                   MOV.L       @R15+,R8
+    0000038C 69F6                   MOV.L       @R15+,R9
+    0000038E 6AF6                   MOV.L       @R15+,R10
+    00000390 6BF6                   MOV.L       @R15+,R11
+    00000392 6CF6                   MOV.L       @R15+,R12
+    00000394 6DF6                   MOV.L       @R15+,R13
+    00000396 000B                   RTS
+    00000398 6EF6                   MOV.L       @R15+,R14
+    0000039A              L489:                             
+    0000039A 012C                   .DATA.W     H'012C
+    0000039C <00000000>             .DATA.L     _Sleep
+      15062020.c   194    
+      15062020.c   195    
+      15062020.c   196    //****************************************************************************
+      15062020.c   197    //**************                                              ****************
+      15062020.c   198    //**************                 Notice!                      ****************
+      15062020.c   199    //**************                                              ****************
+      15062020.c   200    //**************  Please do not change the following source.  ****************
+      15062020.c   201    //**************                                              ****************
+      15062020.c   202    //****************************************************************************
+      15062020.c   203    
+      15062020.c   204    
+      15062020.c   205    #pragma section _BR_Size
+      15062020.c   206    unsigned long BR_Size;
+      15062020.c   207    #pragma section
+      15062020.c   208    
+      15062020.c   209    
+      15062020.c   210    #pragma section _TOP
+      15062020.c   211    
+      15062020.c   212    //****************************************************************************
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   13
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      15062020.c   213    //  InitializeSystem
+      15062020.c   214    //
+      15062020.c   215    //  param   :   isAppli   : 1 = Application / 0 = eActivity
+      15062020.c   216    //              OptionNum : Option Number (only eActivity)
+      15062020.c   217    //
+      15062020.c   218    //  retval  :   1 = No error / 0 = Error
+      15062020.c   219    //
+      15062020.c   220    //****************************************************************************
+      15062020.c   221    int InitializeSystem(int isAppli, unsigned short OptionNum)
+P_T 00000000              _InitializeSystem:               ; function: InitializeSystem
+                                                           ; frame size=0
+      15062020.c   222    {
+      15062020.c   223        return INIT_ADDIN_APPLICATION(isAppli, OptionNum);
+    00000000 D301                   MOV.L       L490+2,R3  ; _INIT_ADDIN_APPLICATION
+    00000002 432B                   JMP         @R3
+    00000004 0009                   NOP
+    00000006              L490:                             
+    00000006 0000                   .DATA.W     0
+    00000008 <00000000>             .DATA.L     _INIT_ADDIN_APPLICATION
+      15062020.c   224    }
+      15062020.c   225    
+      15062020.c   226    #pragma section
+D   00000000              _drmCheck:                       ; static: drmCheck
+    00000000 00000000               .DATA.L     H'00000000
+C   00000000              L352:
+    00000000 <00000000>             .DATA.L     L353,L354,L355,L356,L357,L358
+             <00000000>   
+             <00000000>   
+             <00000000>   
+             <00000000>   
+             <00000000>   
+    00000018              L359:
+    00000018 537069636B             .SDATA      "Spicker :D"
+             6572203A44   
+    00000022 00                     .DATA.B     H'00
+    00000023 00000001               .RES.B      1
+    00000024              L363:
+    00000024 3E                     .SDATA      ">"
+    00000025 00                     .DATA.B     H'00
+    00000026 00000002               .RES.W      1
+    00000028              L366:
+    00000028 20                     .SDATA      " "
+    00000029 00                     .DATA.B     H'00
+    0000002A 00000002               .RES.W      1
+    0000002C              L371:
+    0000002C 5445535431             .SDATA      "TEST1"
+    00000031 00                     .DATA.B     H'00
+    00000032 00000002               .RES.W      1
+    00000034              L373:
+    00000034 5445535432             .SDATA      "TEST2"
+    00000039 00                     .DATA.B     H'00
+    0000003A 00000002               .RES.W      1
+    0000003C              L375:
+    0000003C 5445535433             .SDATA      "TEST3"
+    00000041 00                     .DATA.B     H'00
+    00000042 00000002               .RES.W      1
+    00000044              L377:
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   14
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000044 5445535434             .SDATA      "TEST4"
+    00000049 00                     .DATA.B     H'00
+    0000004A 00000002               .RES.W      1
+    0000004C              L379:
+    0000004C 5445535435             .SDATA      "TEST5"
+    00000051 00                     .DATA.B     H'00
+    00000052 00000002               .RES.W      1
+    00000054              L386:
+    00000054 44524D                 .SDATA      "DRM"
+    00000057 00                     .DATA.B     H'00
+    00000058              L387:
+    00000058 436F646520             .SDATA      "Code eingeben"
+             65696E6765   
+             62656E       
+    00000065 00                     .DATA.B     H'00
+    00000066 00000002               .RES.W      1
+    00000068              L388:
+    00000068 5B205D205B             .SDATA      "[ ] [ ] [ ]"
+             205D205B20   
+             5D           
+    00000073 00                     .DATA.B     H'00
+    00000074              L391:
+    00000074 30                     .SDATA      "0"
+    00000075 00                     .DATA.B     H'00
+    00000076 00000002               .RES.W      1
+    00000078              L393:
+    00000078 31                     .SDATA      "1"
+    00000079 00                     .DATA.B     H'00
+    0000007A 00000002               .RES.W      1
+    0000007C              L395:
+    0000007C 32                     .SDATA      "2"
+    0000007D 00                     .DATA.B     H'00
+    0000007E 00000002               .RES.W      1
+    00000080              L397:
+    00000080 33                     .SDATA      "3"
+    00000081 00                     .DATA.B     H'00
+    00000082 00000002               .RES.W      1
+    00000084              L399:
+    00000084 34                     .SDATA      "4"
+    00000085 00                     .DATA.B     H'00
+    00000086 00000002               .RES.W      1
+    00000088              L401:
+    00000088 35                     .SDATA      "5"
+    00000089 00                     .DATA.B     H'00
+    0000008A 00000002               .RES.W      1
+    0000008C              L403:
+    0000008C 36                     .SDATA      "6"
+    0000008D 00                     .DATA.B     H'00
+    0000008E 00000002               .RES.W      1
+    00000090              L405:
+    00000090 37                     .SDATA      "7"
+    00000091 00                     .DATA.B     H'00
+    00000092 00000002               .RES.W      1
+    00000094              L407:
+    00000094 38                     .SDATA      "8"
+    00000095 00                     .DATA.B     H'00
+    00000096 00000002               .RES.W      1
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE   15
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000098              L409:
+    00000098 39                     .SDATA      "9"
+    00000099 00                     .DATA.B     H'00
+    0000009A 00000002               .RES.W      1
+    0000009C              L353:
+    0000009C 5465737431             .SDATA      "Test1"
+    000000A1 00                     .DATA.B     H'00
+    000000A2 00000002               .RES.W      1
+    000000A4              L354:
+    000000A4 5465737432             .SDATA      "Test2"
+    000000A9 00                     .DATA.B     H'00
+    000000AA 00000002               .RES.W      1
+    000000AC              L355:
+    000000AC 5465737433             .SDATA      "Test3"
+    000000B1 00                     .DATA.B     H'00
+    000000B2 00000002               .RES.W      1
+    000000B4              L356:
+    000000B4 5465737434             .SDATA      "Test4"
+    000000B9 00                     .DATA.B     H'00
+    000000BA 00000002               .RES.W      1
+    000000BC              L357:
+    000000BC 5465737435             .SDATA      "Test5"
+    000000C1 00                     .DATA.B     H'00
+    000000C2 00000002               .RES.W      1
+    000000C4              L358:
+    000000C4 5465737436             .SDATA      "Test6"
+    000000C9 00                     .DATA.B     H'00
+B_B 00000000              _BR_Size:                        ; static: BR_Size
+    00000000 00000004               .RES.L      1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 14-Jun-2020 00:31:16  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:      226
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000003A0 Byte(s)
+PROGRAM  SECTION (P_BR_Size):                       00000000 Byte(s)
+PROGRAM  SECTION (P_TOP):                           0000000C Byte(s)
+CONSTANT SECTION (C):                               000000CA Byte(s)
+CONSTANT SECTION (C_BR_Size):                       00000000 Byte(s)
+CONSTANT SECTION (C_TOP):                           00000000 Byte(s)
+DATA     SECTION (D):                               00000004 Byte(s)
+DATA     SECTION (D_BR_Size):                       00000000 Byte(s)
+DATA     SECTION (D_TOP):                           00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+BSS      SECTION (B_BR_Size):                       00000004 Byte(s)
+BSS      SECTION (B_TOP):                           00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 0000047E Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            7
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           6
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            74
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\Luca\AppData\Local\Temp\hmkA370.tmp 
+
