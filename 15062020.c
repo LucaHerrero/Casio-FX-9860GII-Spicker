@@ -20,18 +20,18 @@ int firstMenu() {
     unsigned int auswahl = 3;
     unsigned int menuItemsX = 2;
     unsigned int menuItemsY = 3;
-    unsigned int menuItemsNbr = 6;
+    unsigned int menuItemsNbr = 5;
     unsigned char * menuItems[] = {
         "Lernfeld 1",
         "Lernfeld 2",
         "PC/Netzwerktechnik",
         "Reihenschaltung",
-        "Test5",
+        "Web",
         "Test6"
     };
     // TITLE 
     locate(1,1);
-    Print((unsigned char*)"Spicker :D");  
+    Print((unsigned char*)"== LHM Production ==");  
     // Menu Items
     for(i=0; i < menuItemsNbr; i=i+1){
         locate(menuItemsX, menuItemsY+i);
@@ -48,17 +48,17 @@ int firstMenu() {
             if (auswahl == 3) {
                 locate(1,auswahl);
                 Print((unsigned char*)" ");
-                auswahl = auswahl + 6;
+                auswahl = auswahl + menuItemsNbr;
             }
             locate(1,auswahl);
             Print((unsigned char*)" ");
             auswahl = auswahl - 1;
         };
         if(KEY_CTRL_DOWN == key) {
-            if (auswahl == 8) {
+            if (auswahl == menuItemsNbr+menuItemsX) {
                 locate(1,auswahl);
                 Print((unsigned char*)" ");
-                auswahl = auswahl - 6;
+                auswahl = auswahl - menuItemsNbr;
             }
             locate(1,auswahl);
             Print((unsigned char*)" ");
@@ -82,8 +82,8 @@ int firstMenu() {
                 lf4list();
             }
             if (auswahl == 7) {
-                locate(8,1);
-                Print((unsigned char*)"TEST5");
+                Bdisp_AllClr_DDVRAM();
+                lf5list();
             }
         };
         if (KEY_CTRL_EXIT == key) {
@@ -1202,7 +1202,7 @@ int lf4list_2(){
     Print((unsigned char*)"Ig = I1 = I2 = I3");
     locate(2,5);
     Print((unsigned char*)"Rg = R1 + R2 + R3");
-    locate(2,5);
+    locate(2,6);
     Print((unsigned char*)"Pg = P1 + P2 + P3");
     while (1){
         unsigned int key;       
@@ -1230,7 +1230,7 @@ int lf4list_3(){
     Print((unsigned char*)"R2 = U2 / I");
     locate(2,5);
     Print((unsigned char*)"I3 = U3 / R3");
-    locate(2,5);
+    locate(2,6);
     Print((unsigned char*)"U2 = P2 / I");
     while (1){
         unsigned int key;       
@@ -1245,6 +1245,34 @@ int lf4list_3(){
         }
     } 
 }
+
+// Web
+int lf5list(){   
+    locate(1,1);
+    Print((unsigned char*)"Web");
+    locate(1,3);
+    Print((unsigned char*)"0123456789ABCDEF");
+    locate(1,4);
+    Print((unsigned char*)"BB=187(11*16)+(11*1)");
+    locate(1,5);
+    Print((unsigned char*)"92/16=5 Rest 12 == 5");
+    locate(1,6);
+    Print((unsigned char*)"12/16=0 Rest 12 == C");
+    locate(1,7);
+    Print((unsigned char*)"CSSBox Margin/Border");
+    locate(5,8);
+    Print((unsigned char*)"Padding");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+    } 
+}
+
+
 
 //****************************************************************************
 //**************                                              ****************
