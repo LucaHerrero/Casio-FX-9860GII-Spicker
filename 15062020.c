@@ -24,7 +24,7 @@ int firstMenu() {
     unsigned char * menuItems[] = {
         "Lernfeld 1",
         "Lernfeld 2",
-        "Test3",
+        "PC/Netzwerktechnik",
         "Test4",
         "Test5",
         "Test6"
@@ -74,8 +74,8 @@ int firstMenu() {
                 lf2menu();
             }
             if (auswahl == 5) {
-                locate(8,1);
-                Print((unsigned char*)"TEST3");
+                Bdisp_AllClr_DDVRAM();
+                lf3list();
             }
             if (auswahl == 6) {
                 locate(8,1);
@@ -1016,7 +1016,126 @@ int lf2menuitem4_4(){
     } 
 }
 
-
+int lf3list(){   
+    locate(1,1);
+    Print((unsigned char*)"Netzwerktechnik  1/4");
+    locate(1,3);
+    Print((unsigned char*)"DNS=Domain Name ");
+    locate(3,4);
+    Print((unsigned char*)"Service");
+    locate(1,5);
+    Print((unsigned char*)"DHCP=Dynamic Host");
+    locate(3,6);
+    Print((unsigned char*)"Config.Protokoll");
+    locate(1,7);
+    Print((unsigned char*)"WWW=Weltweites Netz");
+    locate(1,8);
+    Print((unsigned char*)"RJ45=Netzwerkstecker");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list_1();
+        }
+    } 
+}
+int lf3list_1(){   
+    locate(1,1);
+    Print((unsigned char*)"Netzwerktechnik  2/4");
+    locate(1,3);
+    Print((unsigned char*)"TCP/IP=Stand. Netz-");
+    locate(3,4);
+    Print((unsigned char*)"werk Protokoll");
+    locate(1,5);
+    Print((unsigned char*)"MAC Adr.=feste Adr.");
+    locate(3,6);
+    Print((unsigned char*)"in der NW Karte");
+    locate(1,7);
+    Print((unsigned char*)"ipconfig=Windows");
+    locate(1,8);
+    Print((unsigned char*)"twisted Pair...");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list_2();
+        }
+    } 
+}
+int lf3list_2(){   
+    locate(1,1);
+    Print((unsigned char*)"PC Technik       3/4");
+    locate(1,3);
+    Print((unsigned char*)"-Northbridge (CPU/");
+    locate(3,4);
+    Print((unsigned char*)"RAM/PCI(e))");
+    locate(1,5);
+    Print((unsigned char*)"-Sourcebridge (USB/");
+    locate(3,6);
+    Print((unsigned char*)"PS2/PCI/S-ATA/IDE)");
+    locate(1,7);
+    Print((unsigned char*)"-BIOS=SW fur Mboard");
+    locate(1,8);
+    Print((unsigned char*)"-POST=PowerOnSelfTest");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list_1();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list_3();
+        }
+    } 
+}
+int lf3list_3(){   
+    locate(1,1);
+    Print((unsigned char*)"PC Technik       4/4");
+    locate(1,3);
+    Print((unsigned char*)"-Speichermedien(Fes-");
+    locate(3,4);
+    Print((unsigned char*)"tplatte(SSD/HDD)/");
+    locate(3,5);
+    Print((unsigned char*)"RAM/USB-Stick)");
+    locate(1,6);
+    Print((unsigned char*)"-Dateiendungen (Word");
+    locate(3,7);
+    Print((unsigned char*)"=doc/docx PP=pptx/");
+    locate(3,8);
+    Print((unsigned char*)"ppt Excel=xls/xlsx");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf3list_2();
+        }
+    } 
+}
 
 //****************************************************************************
 //**************                                              ****************
