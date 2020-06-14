@@ -5,131 +5,139 @@
  .export _AddIn_main
 _AddIn_main: .equ h'0030020c
  .export _drm
-_drm: .equ h'00300378
+_drm: .equ h'00300370
  .export _firstMenu
 _firstMenu: .equ h'00300234
  .export _lf1menu
-_lf1menu: .equ h'00300598
+_lf1menu: .equ h'00300590
  .export _lf2menu
-_lf2menu: .equ h'00300f98
+_lf2menu: .equ h'00300f90
  .export _lf3list
-_lf3list: .equ h'00301878
+_lf3list: .equ h'00301870
+ .export _lf4list
+_lf4list: .equ h'00301b56
  .export _lf1menuitem1
-_lf1menuitem1: .equ h'003006d2
+_lf1menuitem1: .equ h'003006ca
  .export _lf1menuitem2
-_lf1menuitem2: .equ h'00300748
+_lf1menuitem2: .equ h'00300740
  .export _lf1menuitem3
-_lf1menuitem3: .equ h'003008ac
+_lf1menuitem3: .equ h'003008a4
  .export _lf1menuitem4
-_lf1menuitem4: .equ h'0030097c
+_lf1menuitem4: .equ h'00300974
  .export _lf1menuitem5
-_lf1menuitem5: .equ h'00300d34
+_lf1menuitem5: .equ h'00300d2c
  .export _lf1menuitem2_1
-_lf1menuitem2_1: .equ h'00300824
+_lf1menuitem2_1: .equ h'0030081c
  .export _lf1menuitem4_1
-_lf1menuitem4_1: .equ h'00300a44
+_lf1menuitem4_1: .equ h'00300a3c
  .export _lf1menuitem4_2
-_lf1menuitem4_2: .equ h'00300b0c
+_lf1menuitem4_2: .equ h'00300b04
  .export _lf1menuitem4_3
-_lf1menuitem4_3: .equ h'00300be4
+_lf1menuitem4_3: .equ h'00300bdc
  .export _lf1menuitem4_4
-_lf1menuitem4_4: .equ h'00300cac
+_lf1menuitem4_4: .equ h'00300ca4
  .export _lf1menuitem5_1
-_lf1menuitem5_1: .equ h'00300e18
+_lf1menuitem5_1: .equ h'00300e10
  .export _lf1menuitem5_2
-_lf1menuitem5_2: .equ h'00300ee0
+_lf1menuitem5_2: .equ h'00300ed8
  .export _lf2menuitem1
-_lf2menuitem1: .equ h'003010c0
+_lf2menuitem1: .equ h'003010b8
  .export _lf2menuitem2
-_lf2menuitem2: .equ h'0030139c
+_lf2menuitem2: .equ h'00301394
  .export _lf2menuitem3
-_lf2menuitem3: .equ h'00301460
+_lf2menuitem3: .equ h'00301458
  .export _lf2menuitem4
-_lf2menuitem4: .equ h'003014d6
+_lf2menuitem4: .equ h'003014ce
  .export _lf2menuitem1_1
-_lf2menuitem1_1: .equ h'00301178
+_lf2menuitem1_1: .equ h'00301170
  .export _lf2menuitem1_2
-_lf2menuitem1_2: .equ h'00301240
+_lf2menuitem1_2: .equ h'00301238
  .export _lf2menuitem1_3
-_lf2menuitem1_3: .equ h'00301308
+_lf2menuitem1_3: .equ h'00301300
  .export _lf2menuitem4_1
-_lf2menuitem4_1: .equ h'003015a8
+_lf2menuitem4_1: .equ h'003015a0
  .export _lf2menuitem4_2
-_lf2menuitem4_2: .equ h'00301660
+_lf2menuitem4_2: .equ h'00301658
  .export _lf2menuitem4_3
-_lf2menuitem4_3: .equ h'00301738
+_lf2menuitem4_3: .equ h'00301730
  .export _lf2menuitem4_4
-_lf2menuitem4_4: .equ h'003017ac
+_lf2menuitem4_4: .equ h'003017a4
  .export _lf3list_1
-_lf3list_1: .equ h'00301934
+_lf3list_1: .equ h'0030192c
  .export _lf3list_2
-_lf3list_2: .equ h'00301a04
+_lf3list_2: .equ h'003019fc
  .export _lf3list_3
-_lf3list_3: .equ h'00301ad4
+_lf3list_3: .equ h'00301acc
+ .export _lf4list_1
+_lf4list_1: .equ h'00301c30
+ .export _lf4list_2
+_lf4list_2: .equ h'00301ca6
+ .export _lf4list_3
+_lf4list_3: .equ h'00301d64
  .export ___LINK_PROTECT
-___LINK_PROTECT: .equ h'00301b90
+___LINK_PROTECT: .equ h'00301e00
  .export _SetQuitHandler
-_SetQuitHandler: .equ h'00301b94
+_SetQuitHandler: .equ h'00301e04
  .export _OnAppCloseDefault
-_OnAppCloseDefault: .equ h'00301b9a
+_OnAppCloseDefault: .equ h'00301e0a
  .export __INITSCT_ADDIN
-__INITSCT_ADDIN: .equ h'00301bee
+__INITSCT_ADDIN: .equ h'00301e5e
  .export _INIT_ADDIN_APPLICATION
-_INIT_ADDIN_APPLICATION: .equ h'00301c36
+_INIT_ADDIN_APPLICATION: .equ h'00301ea6
  .export __quick_odd_mvn
-__quick_odd_mvn: .equ h'00301cb8
+__quick_odd_mvn: .equ h'00301f28
  .export __quick_evn_mvn
-__quick_evn_mvn: .equ h'00301cac
+__quick_evn_mvn: .equ h'00301f1c
  .export _Bdel_cychdr
-_Bdel_cychdr: .equ h'00301d50
+_Bdel_cychdr: .equ h'00301fc0
  .export _Bdisp_AllClr_DDVRAM
-_Bdisp_AllClr_DDVRAM: .equ h'00301d60
+_Bdisp_AllClr_DDVRAM: .equ h'00301fd0
  .export _BfileFLS_CloseFile
-_BfileFLS_CloseFile: .equ h'00301d70
+_BfileFLS_CloseFile: .equ h'00301fe0
  .export _Bkey_Set_RepeatTime_Default
-_Bkey_Set_RepeatTime_Default: .equ h'00301d80
+_Bkey_Set_RepeatTime_Default: .equ h'00301ff0
  .export _CallbackAtQuitMainFunction
-_CallbackAtQuitMainFunction: .equ h'00301d90
+_CallbackAtQuitMainFunction: .equ h'00302000
  .export _flsFindClose
-_flsFindClose: .equ h'00301da0
+_flsFindClose: .equ h'00302010
  .export _GetKey
-_GetKey: .equ h'00301db0
+_GetKey: .equ h'00302020
  .export _GLibAddinAplExecutionCheck
-_GLibAddinAplExecutionCheck: .equ h'00301dc0
+_GLibAddinAplExecutionCheck: .equ h'00302030
  .export _Hmem_SetMMU
-_Hmem_SetMMU: .equ h'00301dd0
+_Hmem_SetMMU: .equ h'00302040
  .export _Print
-_Print: .equ h'00301de0
+_Print: .equ h'00302050
  .export _PrintMini
-_PrintMini: .equ h'00301df0
+_PrintMini: .equ h'00302060
  .export _locate
-_locate: .equ h'00301e0c
+_locate: .equ h'0030207c
  .export _Bdisp_ReadArea_DD
-_Bdisp_ReadArea_DD: .equ h'00301e34
+_Bdisp_ReadArea_DD: .equ h'003020a4
  .export _GetSDKLibraryVersion
-_GetSDKLibraryVersion: .equ h'00301f68
+_GetSDKLibraryVersion: .equ h'003021d8
  .export _SetTimer
-_SetTimer: .equ h'00301f6e
+_SetTimer: .equ h'003021de
  .export _KillTimer
-_KillTimer: .equ h'00301fc2
+_KillTimer: .equ h'00302232
  .export _Sleep
-_Sleep: .equ h'00302006
+_Sleep: .equ h'00302276
  .export __divls
-__divls: .equ h'00302068
+__divls: .equ h'003022d8
  .export __modls
-__modls: .equ h'0030211c
+__modls: .equ h'0030238c
  .export _Bcre_cychdr
-_Bcre_cychdr: .equ h'003021e4
+_Bcre_cychdr: .equ h'00302454
  .export _BSrl_DummyWAIT
-_BSrl_DummyWAIT: .equ h'003021f4
+_BSrl_DummyWAIT: .equ h'00302464
  .export _Bsta_cychdr
-_Bsta_cychdr: .equ h'00302204
+_Bsta_cychdr: .equ h'00302474
  .export _Bstp_cychdr
-_Bstp_cychdr: .equ h'00302214
+_Bstp_cychdr: .equ h'00302484
  .export _DD_GET
-_DD_GET: .equ h'00302224
+_DD_GET: .equ h'00302494
  .export _locate_OS
-_locate_OS: .equ h'00302234
+_locate_OS: .equ h'003024a4
  .export _PrintMiniSd
-_PrintMiniSd: .equ h'00302244
+_PrintMiniSd: .equ h'003024b4
  .end

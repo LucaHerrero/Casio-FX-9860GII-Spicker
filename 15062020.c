@@ -25,7 +25,7 @@ int firstMenu() {
         "Lernfeld 1",
         "Lernfeld 2",
         "PC/Netzwerktechnik",
-        "Test4",
+        "Reihenschaltung",
         "Test5",
         "Test6"
     };
@@ -78,8 +78,8 @@ int firstMenu() {
                 lf3list();
             }
             if (auswahl == 6) {
-                locate(8,1);
-                Print((unsigned char*)"TEST4");
+                Bdisp_AllClr_DDVRAM();
+                lf4list();
             }
             if (auswahl == 7) {
                 locate(8,1);
@@ -1016,6 +1016,7 @@ int lf2menuitem4_4(){
     } 
 }
 
+//PC/Netzwerktechnik
 int lf3list(){   
     locate(1,1);
     Print((unsigned char*)"Netzwerktechnik  1/4");
@@ -1133,6 +1134,114 @@ int lf3list_3(){
         if(KEY_CTRL_UP == key) {
             Bdisp_AllClr_DDVRAM();
             lf3list_2();
+        }
+    } 
+}
+
+//Reihenschaltung
+int lf4list(){   
+    locate(1,1);
+    Print((unsigned char*)"Reihenschaltung  1/4");
+    locate(1,3);
+    Print((unsigned char*)"U=R*I        R=U^2/P");
+    locate(1,4);
+    Print((unsigned char*)"U=P/I        R=P/I^2");
+    locate(1,5);
+    Print((unsigned char*)"U=Wurzel(P*R)R=U/I");
+    locate(1,6);
+    Print((unsigned char*)"I=U/R        P=R*I^2");
+    locate(1,7);
+    Print((unsigned char*)"I=P/U        P=U^2/R");
+    locate(1,8);
+    Print((unsigned char*)"I=Wurzel(P/R)P=U*I");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list_1();
+        }
+    } 
+}
+int lf4list_1(){   
+    locate(1,1);
+    Print((unsigned char*)"Reihenschaltung  2/4");
+    locate(1,3);
+    Print((unsigned char*)" O--[R1]-[R2]-[R3]--");
+    locate(1,4);
+    Print((unsigned char*)" UUptoDown   <-I   |");
+    locate(1,5);
+    Print((unsigned char*)" O------------------");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list_2();
+        }
+    } 
+}
+int lf4list_2(){   
+    locate(1,1);
+    Print((unsigned char*)"Reihenschaltung  3/4");
+    locate(2,3);
+    Print((unsigned char*)"Ug = U1 + U2 + U3");
+    locate(2,4);
+    Print((unsigned char*)"Ig = I1 = I2 = I3");
+    locate(2,5);
+    Print((unsigned char*)"Rg = R1 + R2 + R3");
+    locate(2,5);
+    Print((unsigned char*)"Pg = P1 + P2 + P3");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list_1();
+        }
+        if(KEY_CTRL_DOWN == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list_3();
+        }
+    } 
+}
+int lf4list_3(){   
+    locate(1,1);
+    Print((unsigned char*)"Reihenschaltung  4/4");
+    locate(2,3);
+    Print((unsigned char*)"U1 = R1 * I");
+    locate(2,4);
+    Print((unsigned char*)"R2 = U2 / I");
+    locate(2,5);
+    Print((unsigned char*)"I3 = U3 / R3");
+    locate(2,5);
+    Print((unsigned char*)"U2 = P2 / I");
+    while (1){
+        unsigned int key;       
+        GetKey(&key);
+        if(KEY_CTRL_EXIT == key) {
+            Bdisp_AllClr_DDVRAM();
+            firstMenu();
+        }
+        if(KEY_CTRL_UP == key) {
+            Bdisp_AllClr_DDVRAM();
+            lf4list_2();
         }
     } 
 }

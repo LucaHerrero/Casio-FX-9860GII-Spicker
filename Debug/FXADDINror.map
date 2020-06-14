@@ -1,8 +1,8 @@
-Hitachi Optimizing Linkage Editor (Ver. 7.1.03.000)14-Jun-2020 16:33:00
+Hitachi Optimizing Linkage Editor (Ver. 7.1.03.000)14-Jun-2020 17:51:44
 
 *** Options ***
 
--subcommand=C:\Users\Luca\AppData\Local\Temp\hmk967A.tmp
+-subcommand=C:\Users\Luca\AppData\Local\Temp\hmkABD8.tmp
 noprelink
 sdebug
 rom D=R
@@ -29,11 +29,11 @@ SECTION                            START      END         SIZE   ALIGN
 P_TOP
                                   00300200  0030020b         c   4
 P
-                                  0030020c  00302253      2048   4
+                                  0030020c  003024c3      22b8   4
 C
-                                  00302254  0030311f       ecc   4
+                                  003024c4  00303543      1080   4
 D
-                                  00303120  00303127         8   4
+                                  00303544  0030354b         8   4
 B_BR_Size
                                   08100000  08100003         4   4
 B
@@ -55,249 +55,257 @@ FILE=C:\Users\Luca\Desktop\Abschlussprüfung\Debug\15062020.obj
 
 SECTION=P
 FILE=C:\Users\Luca\Desktop\Abschlussprüfung\Debug\15062020.obj
-                                  0030020c  00301b8f      1984
+                                  0030020c  00301dff      1bf4
   _AddIn_main
                                   0030020c        28   func ,g         * 
   _firstMenu
-                                  00300234       144   func ,g         * 
+                                  00300234       13c   func ,g         * 
   _drm
-                                  00300378       220   func ,g         * 
+                                  00300370       220   func ,g         * 
   _lf1menu
-                                  00300598       13a   func ,g         * 
+                                  00300590       13a   func ,g         * 
   _lf1menuitem1
-                                  003006d2        76   func ,g         * 
+                                  003006ca        76   func ,g         * 
   _lf1menuitem2
-                                  00300748        dc   func ,g         * 
+                                  00300740        dc   func ,g         * 
   _lf1menuitem2_1
-                                  00300824        88   func ,g         * 
+                                  0030081c        88   func ,g         * 
   _lf1menuitem3
-                                  003008ac        d0   func ,g         * 
+                                  003008a4        d0   func ,g         * 
   _lf1menuitem4
-                                  0030097c        c8   func ,g         * 
+                                  00300974        c8   func ,g         * 
   _lf1menuitem4_1
-                                  00300a44        c8   func ,g         * 
+                                  00300a3c        c8   func ,g         * 
   _lf1menuitem4_2
-                                  00300b0c        d8   func ,g         * 
+                                  00300b04        d8   func ,g         * 
   _lf1menuitem4_3
-                                  00300be4        c8   func ,g         * 
+                                  00300bdc        c8   func ,g         * 
   _lf1menuitem4_4
-                                  00300cac        88   func ,g         * 
+                                  00300ca4        88   func ,g         * 
   _lf1menuitem5
-                                  00300d34        e4   func ,g         * 
+                                  00300d2c        e4   func ,g         * 
   _lf1menuitem5_1
-                                  00300e18        c8   func ,g         * 
+                                  00300e10        c8   func ,g         * 
   _lf1menuitem5_2
-                                  00300ee0        b8   func ,g         * 
+                                  00300ed8        b8   func ,g         * 
   _lf2menu
-                                  00300f98       128   func ,g         * 
+                                  00300f90       128   func ,g         * 
   _lf2menuitem1
-                                  003010c0        b8   func ,g         * 
+                                  003010b8        b8   func ,g         * 
   _lf2menuitem1_1
-                                  00301178        c8   func ,g         * 
+                                  00301170        c8   func ,g         * 
   _lf2menuitem1_2
-                                  00301240        c8   func ,g         * 
+                                  00301238        c8   func ,g         * 
   _lf2menuitem1_3
-                                  00301308        94   func ,g         * 
+                                  00301300        94   func ,g         * 
   _lf2menuitem2
-                                  0030139c        c4   func ,g         * 
+                                  00301394        c4   func ,g         * 
   _lf2menuitem3
-                                  00301460        76   func ,g         * 
+                                  00301458        76   func ,g         * 
   _lf2menuitem4
-                                  003014d6        d2   func ,g         * 
+                                  003014ce        d2   func ,g         * 
   _lf2menuitem4_1
-                                  003015a8        b8   func ,g         * 
+                                  003015a0        b8   func ,g         * 
   _lf2menuitem4_2
-                                  00301660        d8   func ,g         * 
+                                  00301658        d8   func ,g         * 
   _lf2menuitem4_3
-                                  00301738        74   func ,g         * 
+                                  00301730        74   func ,g         * 
   _lf2menuitem4_4
-                                  003017ac        cc   func ,g         * 
+                                  003017a4        cc   func ,g         * 
   _lf3list
-                                  00301878        bc   func ,g         * 
+                                  00301870        bc   func ,g         * 
   _lf3list_1
-                                  00301934        d0   func ,g         * 
+                                  0030192c        d0   func ,g         * 
   _lf3list_2
-                                  00301a04        d0   func ,g         * 
+                                  003019fc        d0   func ,g         * 
   _lf3list_3
-                                  00301ad4        bc   func ,g         * 
+                                  00301acc        8a   func ,g         * 
+  _lf4list
+                                  00301b56        da   func ,g         * 
+  _lf4list_1
+                                  00301c30        76   func ,g         * 
+  _lf4list_2
+                                  00301ca6        be   func ,g         * 
+  _lf4list_3
+                                  00301d64        9c   func ,g         * 
 FILE=C:\Program Files\CASIO\fx-9860G SDK\OS\FX\lib\setup.obj
-                                  00301b90  00301cab       11c
+                                  00301e00  00301f1b       11c
   ___LINK_PROTECT
-                                  00301b90         4   func ,g         * 
+                                  00301e00         4   func ,g         * 
   _SetQuitHandler
-                                  00301b94         6   func ,g         * 
+                                  00301e04         6   func ,g         * 
   _OnAppCloseDefault
-                                  00301b9a        54   func ,g         * 
+                                  00301e0a        54   func ,g         * 
   __INITSCT_ADDIN
-                                  00301bee        48   func ,g         * 
+                                  00301e5e        48   func ,g         * 
   _INIT_ADDIN_APPLICATION
-                                  00301c36        76   func ,g         * 
+                                  00301ea6        76   func ,g         * 
 FILE=__q_fmvn
-                                  00301cac  00301d4f        a4
+                                  00301f1c  00301fbf        a4
   __quick_evn_mvn
-                                  00301cac         0   none ,g         * 
+                                  00301f1c         0   none ,g         * 
   __quick_odd_mvn
-                                  00301cb8         0   none ,g         * 
+                                  00301f28         0   none ,g         * 
   A_FMVN_TBL
-                                  00301cc4         0   none ,l         * 
+                                  00301f34         0   none ,l         * 
   FMVN_64
-                                  00301cca         0   none ,l         * 
+                                  00301f3a         0   none ,l         * 
   FMVN_60
-                                  00301cce         0   none ,l         * 
+                                  00301f3e         0   none ,l         * 
   FMVN_56
-                                  00301cd2         0   none ,l         * 
+                                  00301f42         0   none ,l         * 
   FMVN_52
-                                  00301cd6         0   none ,l         * 
+                                  00301f46         0   none ,l         * 
   FMVN_48
-                                  00301cda         0   none ,l         * 
+                                  00301f4a         0   none ,l         * 
   FMVN_44
-                                  00301cde         0   none ,l         * 
+                                  00301f4e         0   none ,l         * 
   FMVN_40
-                                  00301ce2         0   none ,l         * 
+                                  00301f52         0   none ,l         * 
   FMVN_36
-                                  00301ce6         0   none ,l         * 
+                                  00301f56         0   none ,l         * 
   FMVN_32
-                                  00301cea         0   none ,l         * 
+                                  00301f5a         0   none ,l         * 
   FMVN_28
-                                  00301cee         0   none ,l         * 
+                                  00301f5e         0   none ,l         * 
   FMVN_24
-                                  00301cf2         0   none ,l         * 
+                                  00301f62         0   none ,l         * 
   FMVN_20
-                                  00301cf6         0   none ,l         * 
+                                  00301f66         0   none ,l         * 
   FMVN_16
-                                  00301cfa         0   none ,l         * 
+                                  00301f6a         0   none ,l         * 
   FMVN_12
-                                  00301cfe         0   none ,l         * 
+                                  00301f6e         0   none ,l         * 
   FMVN_8
-                                  00301d02         0   none ,l         * 
+                                  00301f72         0   none ,l         * 
   FMVN_4
-                                  00301d06         0   none ,l         * 
+                                  00301f76         0   none ,l         * 
   FMVN_0
-                                  00301d08         0   none ,l         * 
+                                  00301f78         0   none ,l         * 
   FMVN_TBL
-                                  00301d0c         0   none ,l         * 
+                                  00301f7c         0   none ,l         * 
 FILE=_Bdel_cychdr
-                                  00301d50  00301d5f        10
+                                  00301fc0  00301fcf        10
   _Bdel_cychdr
-                                  00301d50         0   none ,g         * 
+                                  00301fc0         0   none ,g         * 
 FILE=_Bdisp_AllClr_DDVRAM
-                                  00301d60  00301d6f        10
+                                  00301fd0  00301fdf        10
   _Bdisp_AllClr_DDVRAM
-                                  00301d60         0   none ,g         * 
+                                  00301fd0         0   none ,g         * 
 FILE=_BfileFLS_CloseFile
-                                  00301d70  00301d7f        10
+                                  00301fe0  00301fef        10
   _BfileFLS_CloseFile
-                                  00301d70         0   none ,g         * 
+                                  00301fe0         0   none ,g         * 
 FILE=_Bkey_Set_RepeatTime_Default
-                                  00301d80  00301d8f        10
+                                  00301ff0  00301fff        10
   _Bkey_Set_RepeatTime_Default
-                                  00301d80         0   none ,g         * 
+                                  00301ff0         0   none ,g         * 
 FILE=_CallbackAtQuitMainFunction
-                                  00301d90  00301d9f        10
+                                  00302000  0030200f        10
   _CallbackAtQuitMainFunction
-                                  00301d90         0   none ,g         * 
+                                  00302000         0   none ,g         * 
 FILE=_flsFindClose
-                                  00301da0  00301daf        10
+                                  00302010  0030201f        10
   _flsFindClose
-                                  00301da0         0   none ,g         * 
+                                  00302010         0   none ,g         * 
 FILE=_getkey
-                                  00301db0  00301dbf        10
+                                  00302020  0030202f        10
   _GetKey
-                                  00301db0         0   none ,g         * 
+                                  00302020         0   none ,g         * 
 FILE=_GLibAddinAplExecutionCheck
-                                  00301dc0  00301dcf        10
+                                  00302030  0030203f        10
   _GLibAddinAplExecutionCheck
-                                  00301dc0         0   none ,g         * 
+                                  00302030         0   none ,g         * 
 FILE=_Hmem_SetMMU
-                                  00301dd0  00301ddf        10
+                                  00302040  0030204f        10
   _Hmem_SetMMU
-                                  00301dd0         0   none ,g         * 
+                                  00302040         0   none ,g         * 
 FILE=_Print
-                                  00301de0  00301def        10
+                                  00302050  0030205f        10
   _Print
-                                  00301de0         0   none ,g         * 
+                                  00302050         0   none ,g         * 
 FILE=dispbios
-                                  00301df0  00301f65       176
+                                  00302060  003021d5       176
   _PrintMini
-                                  00301df0        1c   func ,g         * 
+                                  00302060        1c   func ,g         * 
   _locate
-                                  00301e0c        28   func ,g         * 
+                                  0030207c        28   func ,g         * 
   _Bdisp_ReadArea_DD
-                                  00301e34       132   func ,g         * 
+                                  003020a4       132   func ,g         * 
 FILE=timer
-                                  00301f68  00302067       100
+                                  003021d8  003022d7       100
   _GetSDKLibraryVersion
-                                  00301f68         6   func ,g         * 
+                                  003021d8         6   func ,g         * 
   _SetTimer
-                                  00301f6e        54   func ,g         * 
+                                  003021de        54   func ,g         * 
   _KillTimer
-                                  00301fc2        44   func ,g         * 
+                                  00302232        44   func ,g         * 
   _Sleep
-                                  00302006        62   func ,g         * 
+                                  00302276        62   func ,g         * 
 FILE=__divls
-                                  00302068  0030211b        b4
+                                  003022d8  0030238b        b4
   __divls
-                                  00302068         0   none ,g         * 
+                                  003022d8         0   none ,g         * 
   divls_zero
-                                  00302106         0   none ,l         * 
+                                  00302376         0   none ,l         * 
   A_errno
-                                  00302114         0   none ,l         * 
+                                  00302384         0   none ,l         * 
   n_zerono
-                                  00302118         0   none ,l         * 
+                                  00302388         0   none ,l         * 
 FILE=__modls
-                                  0030211c  003021e3        c8
+                                  0030238c  00302453        c8
   __modls
-                                  0030211c         0   none ,g         * 
+                                  0030238c         0   none ,g         * 
   modls_L
-                                  003021c2         0   none ,l         * 
+                                  00302432         0   none ,l         * 
   modls_zero
-                                  003021ce         0   none ,l         * 
+                                  0030243e         0   none ,l         * 
   A_errno
-                                  003021dc         0   none ,l         * 
+                                  0030244c         0   none ,l         * 
   n_zerono
-                                  003021e0         0   none ,l         * 
+                                  00302450         0   none ,l         * 
 FILE=_Bcre_cychdr
-                                  003021e4  003021f3        10
+                                  00302454  00302463        10
   _Bcre_cychdr
-                                  003021e4         0   none ,g         * 
+                                  00302454         0   none ,g         * 
 FILE=_BSrl_DummyWAIT
-                                  003021f4  00302203        10
+                                  00302464  00302473        10
   _BSrl_DummyWAIT
-                                  003021f4         0   none ,g         * 
+                                  00302464         0   none ,g         * 
 FILE=_Bsta_cychdr
-                                  00302204  00302213        10
+                                  00302474  00302483        10
   _Bsta_cychdr
-                                  00302204         0   none ,g         * 
+                                  00302474         0   none ,g         * 
 FILE=_Bstp_cychdr
-                                  00302214  00302223        10
+                                  00302484  00302493        10
   _Bstp_cychdr
-                                  00302214         0   none ,g         * 
+                                  00302484         0   none ,g         * 
 FILE=_DD_GET
-                                  00302224  00302233        10
+                                  00302494  003024a3        10
   _DD_GET
-                                  00302224         0   none ,g         * 
+                                  00302494         0   none ,g         * 
 FILE=_locate
-                                  00302234  00302243        10
+                                  003024a4  003024b3        10
   _locate_OS
-                                  00302234         0   none ,g         * 
+                                  003024a4         0   none ,g         * 
 FILE=_PrintMiniSd
-                                  00302244  00302253        10
+                                  003024b4  003024c3        10
   _PrintMiniSd
-                                  00302244         0   none ,g         * 
+                                  003024b4         0   none ,g         * 
 
 SECTION=C
 FILE=addin_sct
-                                  0030310c  0030311f        14
+                                  00303530  00303543        14
   _B_BGN
-                                  0030310c         0   none ,g         * 
+                                  00303530         0   none ,g         * 
   _B_END
-                                  00303110         0   none ,g         * 
+                                  00303534         0   none ,g         * 
   _R_BGN
-                                  00303114         0   none ,g         * 
+                                  00303538         0   none ,g         * 
   _R_END
-                                  00303118         0   none ,g         * 
+                                  0030353c         0   none ,g         * 
   _D_ROM
-                                  0030311c         0   none ,g         * 
+                                  00303540         0   none ,g         * 
 
 SECTION=B_BR_Size
 FILE=C:\Users\Luca\Desktop\Abschlussprüfung\Debug\15062020.obj
