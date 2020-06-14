@@ -5,73 +5,123 @@
  .export _AddIn_main
 _AddIn_main: .equ h'0030020c
  .export _drm
-_drm: .equ h'0030038c
+_drm: .equ h'00300378
  .export _firstMenu
 _firstMenu: .equ h'00300234
+ .export _lf1menu
+_lf1menu: .equ h'00300598
+ .export _lf2menu
+_lf2menu: .equ h'00300f98
+ .export _lf1menuitem1
+_lf1menuitem1: .equ h'003006d2
+ .export _lf1menuitem2
+_lf1menuitem2: .equ h'00300748
+ .export _lf1menuitem3
+_lf1menuitem3: .equ h'003008ac
+ .export _lf1menuitem4
+_lf1menuitem4: .equ h'0030097c
+ .export _lf1menuitem5
+_lf1menuitem5: .equ h'00300d34
+ .export _lf1menuitem2_1
+_lf1menuitem2_1: .equ h'00300824
+ .export _lf1menuitem4_1
+_lf1menuitem4_1: .equ h'00300a44
+ .export _lf1menuitem4_2
+_lf1menuitem4_2: .equ h'00300b0c
+ .export _lf1menuitem4_3
+_lf1menuitem4_3: .equ h'00300be4
+ .export _lf1menuitem4_4
+_lf1menuitem4_4: .equ h'00300cac
+ .export _lf1menuitem5_1
+_lf1menuitem5_1: .equ h'00300e18
+ .export _lf1menuitem5_2
+_lf1menuitem5_2: .equ h'00300ee0
+ .export _lf2menuitem1
+_lf2menuitem1: .equ h'003010c0
+ .export _lf2menuitem2
+_lf2menuitem2: .equ h'0030139c
+ .export _lf2menuitem3
+_lf2menuitem3: .equ h'00301460
+ .export _lf2menuitem4
+_lf2menuitem4: .equ h'003014d6
+ .export _lf2menuitem1_1
+_lf2menuitem1_1: .equ h'00301178
+ .export _lf2menuitem1_2
+_lf2menuitem1_2: .equ h'00301240
+ .export _lf2menuitem1_3
+_lf2menuitem1_3: .equ h'00301308
+ .export _lf2menuitem4_1
+_lf2menuitem4_1: .equ h'003015a8
+ .export _lf2menuitem4_2
+_lf2menuitem4_2: .equ h'00301660
+ .export _lf2menuitem4_3
+_lf2menuitem4_3: .equ h'00301738
+ .export _lf2menuitem4_4
+_lf2menuitem4_4: .equ h'003017ac
  .export ___LINK_PROTECT
-___LINK_PROTECT: .equ h'003005ac
+___LINK_PROTECT: .equ h'00301878
  .export _SetQuitHandler
-_SetQuitHandler: .equ h'003005b0
+_SetQuitHandler: .equ h'0030187c
  .export _OnAppCloseDefault
-_OnAppCloseDefault: .equ h'003005b6
+_OnAppCloseDefault: .equ h'00301882
  .export __INITSCT_ADDIN
-__INITSCT_ADDIN: .equ h'0030060a
+__INITSCT_ADDIN: .equ h'003018d6
  .export _INIT_ADDIN_APPLICATION
-_INIT_ADDIN_APPLICATION: .equ h'00300652
+_INIT_ADDIN_APPLICATION: .equ h'0030191e
  .export __quick_odd_mvn
-__quick_odd_mvn: .equ h'003006d4
+__quick_odd_mvn: .equ h'003019a0
  .export __quick_evn_mvn
-__quick_evn_mvn: .equ h'003006c8
+__quick_evn_mvn: .equ h'00301994
  .export _Bdel_cychdr
-_Bdel_cychdr: .equ h'0030076c
+_Bdel_cychdr: .equ h'00301a38
  .export _Bdisp_AllClr_DDVRAM
-_Bdisp_AllClr_DDVRAM: .equ h'0030077c
+_Bdisp_AllClr_DDVRAM: .equ h'00301a48
  .export _BfileFLS_CloseFile
-_BfileFLS_CloseFile: .equ h'0030078c
+_BfileFLS_CloseFile: .equ h'00301a58
  .export _Bkey_Set_RepeatTime_Default
-_Bkey_Set_RepeatTime_Default: .equ h'0030079c
+_Bkey_Set_RepeatTime_Default: .equ h'00301a68
  .export _CallbackAtQuitMainFunction
-_CallbackAtQuitMainFunction: .equ h'003007ac
+_CallbackAtQuitMainFunction: .equ h'00301a78
  .export _flsFindClose
-_flsFindClose: .equ h'003007bc
+_flsFindClose: .equ h'00301a88
  .export _GetKey
-_GetKey: .equ h'003007cc
+_GetKey: .equ h'00301a98
  .export _GLibAddinAplExecutionCheck
-_GLibAddinAplExecutionCheck: .equ h'003007dc
+_GLibAddinAplExecutionCheck: .equ h'00301aa8
  .export _Hmem_SetMMU
-_Hmem_SetMMU: .equ h'003007ec
+_Hmem_SetMMU: .equ h'00301ab8
  .export _Print
-_Print: .equ h'003007fc
+_Print: .equ h'00301ac8
  .export _PrintMini
-_PrintMini: .equ h'0030080c
+_PrintMini: .equ h'00301ad8
  .export _locate
-_locate: .equ h'00300828
+_locate: .equ h'00301af4
  .export _Bdisp_ReadArea_DD
-_Bdisp_ReadArea_DD: .equ h'00300850
+_Bdisp_ReadArea_DD: .equ h'00301b1c
  .export _GetSDKLibraryVersion
-_GetSDKLibraryVersion: .equ h'00300984
+_GetSDKLibraryVersion: .equ h'00301c50
  .export _SetTimer
-_SetTimer: .equ h'0030098a
+_SetTimer: .equ h'00301c56
  .export _KillTimer
-_KillTimer: .equ h'003009de
+_KillTimer: .equ h'00301caa
  .export _Sleep
-_Sleep: .equ h'00300a22
+_Sleep: .equ h'00301cee
  .export __divls
-__divls: .equ h'00300a84
+__divls: .equ h'00301d50
  .export __modls
-__modls: .equ h'00300b38
+__modls: .equ h'00301e04
  .export _Bcre_cychdr
-_Bcre_cychdr: .equ h'00300c00
+_Bcre_cychdr: .equ h'00301ecc
  .export _BSrl_DummyWAIT
-_BSrl_DummyWAIT: .equ h'00300c10
+_BSrl_DummyWAIT: .equ h'00301edc
  .export _Bsta_cychdr
-_Bsta_cychdr: .equ h'00300c20
+_Bsta_cychdr: .equ h'00301eec
  .export _Bstp_cychdr
-_Bstp_cychdr: .equ h'00300c30
+_Bstp_cychdr: .equ h'00301efc
  .export _DD_GET
-_DD_GET: .equ h'00300c40
+_DD_GET: .equ h'00301f0c
  .export _locate_OS
-_locate_OS: .equ h'00300c50
+_locate_OS: .equ h'00301f1c
  .export _PrintMiniSd
-_PrintMiniSd: .equ h'00300c60
+_PrintMiniSd: .equ h'00301f2c
  .end
