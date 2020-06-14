@@ -8,6 +8,8 @@ Ist es nicht einfacher alle Materialien im erlaubten Taschenrechner direkt in de
 Zu aller erst muss der Spicker kompiliert werden, damit der in C geschriebene Code in ein Format für den Taschenrechner gebracht wird.<br>
 Dies machen wir mit dem [Casio fx-9860G SDK](https://mega.nz/file/K1xxyYTJ#W3yuxFg2gUIkSqywDkHPxaBDNzph59h8PK4Np9oJfOM/).<br>
 
+ODER Lad eine der Release Datein runter [Hier](https://github.com/LucaHerrero/Casio-FX-9860-Programmieren/releases/latest)
+
 ### Projekt kompilieren
 Im SDK klick auf [Project] und dann auf [Open], wähle anschließend die *.g1w Datei aus dem Repository aus.<br>
 Ist das erledigt Klick auf [Project] und dann auf [Build].<br>
